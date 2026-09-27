@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Dinámica</title>
+    
+    <!-- 1. Bootstrap Icons via CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #38bdf8;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            color: #94a3b8;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 1.5rem;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: #38bdf8;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: #020617;
+            padding: 1.5rem;
+            text-align: center;
+            border-top: 1px solid #1e293b;
+            margin-top: auto;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2 class="title-anim"><i class="bi bi-rocket-takeoff"></i> Mi Proyecto Web</h2>
+    </header>
+
+    <main class="hero">
+        <h1 class="hero-title">Landing Page Dinámica</h1>
+        <p class="hero-desc">Bienvenido a la página temática interactiva desarrollada con HTML5, CSS3, JavaScript y animaciones GSAP.</p>
+
+        <div class="card-container">
+            <div class="card">
+                <i class="bi bi-cpu"></i>
+                <h3>Tecnología</h3>
+            </div>
+            <div class="card">
+                <i class="bi bi-controller"></i>
+                <h3>Gaming</h3>
+            </div>
+            <div class="card">
+                <i class="bi bi-code-slash"></i>
+                <h3>Desarrollo</h3>
+            </div>
+        </div>
+    </main>
+
+    <!-- 5. Autoría con Nombre Completo y No. Control -->
+    <footer>
+        <p><strong>Desarrollado por:</strong> Villavicencio Barron Evan Dominic | <strong>No. Control:</strong> 221130303</p>
+    </footer>
+
+    <!-- 2. GSAP via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    
+    <!-- Animaciones GSAP -->
+    <script>
+        gsap.from(".title-anim", { duration: 1, y: -50, opacity: 0, ease: "bounce" });
+        gsap.from(".hero-title", { duration: 1.2, delay: 0.3, opacity: 0, y: 30 });
+        gsap.from(".hero-desc", { duration: 1.2, delay: 0.6, opacity: 0, y: 30 });
+        gsap.from(".card", { duration: 1, delay: 0.9, opacity: 0, scale: 0.5, stagger: 0.2 });
+    </script>
+</body>
+</html>
